@@ -1,4 +1,5 @@
 import '../css/style.css';
+import { getBookBySubject } from "./requests";
 
 let subject ='';
 const form = document.getElementById("mainForm");
@@ -11,6 +12,7 @@ form.addEventListener("submit", (e) => {
         alert("Please write a subject before searching");
         return;
     };
+getBookBySubject(subject);
 
 
 })

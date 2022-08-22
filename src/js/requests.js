@@ -2,7 +2,7 @@ import axios from "axios";
 
 export let bookTitle = '';
 
-function getBookBySubject(subject){
+export function getBookBySubject(subject){
     let url = `https://openlibrary.org/subjects/${subject}.json`;
     axios.get(url)
     .then((response) => {
