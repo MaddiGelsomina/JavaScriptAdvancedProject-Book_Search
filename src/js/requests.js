@@ -18,4 +18,5 @@ function getBookBySubject(subject){
             createBookItem(bookTitle, bookAuthor, bookId);
         };
     })
+    .catch(err => console.error(err))
 }
