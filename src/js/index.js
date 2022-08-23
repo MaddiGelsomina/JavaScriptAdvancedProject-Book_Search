@@ -1,7 +1,8 @@
 import '../css/style.css';
-import { getBookBySubject } from "./requests";
+import { getBooksBySubject } from "./requests";
 
-let subject ='';
+export const bookList = document.getElementById("bookList");
+let subject = "";
 const form = document.getElementById("mainForm");
 const searchBar = form.elements["searchBar"];
 
@@ -12,7 +13,8 @@ form.addEventListener("submit", (e) => {
         alert("Please write a subject before searching");
         return;
     };
-getBookBySubject(subject);
-
-
+    getBooksBySubject(subject);
+    while(bookList.lastChild) {
+        bookList.removeChild(bookList.lastChild);
+    };
 })
