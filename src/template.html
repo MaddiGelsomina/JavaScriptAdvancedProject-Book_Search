@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=>, initial-scale=1.0">
     <title>Book Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1 class="title">Search a book</h1>
     <form id="mainForm" class="main-form">
-        <input type="text" class="search-hover" name="searchBar" placeholder="" />
-        <button class="btn" name="submit" type="submit">Search</button>
+        <div class="container-md form-group-row text-center mt-3">
+            <input class="form-control form-control-lg" name="searchBar" type="text">
+            <button class="btn btn-outline-primary btn-lg mt-3 mb-3" name="submit" type="submit">Search</button>
+        </div>
     </form>
-    <ul id="booklist" class="container-sm"></ul>
+    <ul id="bookList" class="container-sm d-flex flex-column"></ul>
 
     <script src="bundle.js"></script>
 </body>
