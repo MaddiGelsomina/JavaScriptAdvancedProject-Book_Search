@@ -27,7 +27,7 @@ module.exports = {
         })
     ],
 
-    mode:'development',
+    mode:'production',
 
     devServer:{
         port: 9000,
