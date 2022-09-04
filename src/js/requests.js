@@ -1,25 +1,32 @@
+import _get from 'lodash/get';
 import { createBookItem } from "./items";
 const axios = require('axios');
 
 export let bookTitle = "";
 
 export function getBooksBySubject(subject){
-    let url = `https://openlibrary.org/subjects/${subject}.json`;
-    axios
-    .get(url)
+let url = `https://openlibrary.org/search.json?q=${subject}`;
+    
+    fetch(url)
     .then((response) => {
-        for(let book of response.data.works){
-            let bookAuthors = "";
-            bookTitle = book.title;
-            for(let author of book.authors){
-                bookAuthors += (author.name + ", ");
-            }
-            bookAuthors = bookAuthors.slice(0, -2);
-            bookAuthors += ".";
-            let bookId = book.key;
-            createBookItem(bookTitle, bookAuthors, bookId);
-        };
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+       return response.json();
     })
+    .then((jsonData) => {
+      for(let i = 0; i <= 10; i++) {
+        let item = _get(jsonData, ['docs', [i]], '');
+        if(item){
+          let bookAuthors = "";
+            bookTitle = item.title;
+            bookAuthors = 'Author(s): ' + item.author_name;
+            let bookId = item.key;
+            createBookItem(bookTitle, bookAuthors, bookId);
+        }
+      }
+    })
+
     .catch(err=>{
         return console.error(err);
     })

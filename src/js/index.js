@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
     if(subject == ""){
         alert("Please write a subject before searching");
         return;
-    };
+    }
     getBooksBySubject(subject);
     while(bookList.lastChild) {
         bookList.removeChild(bookList.lastChild);
