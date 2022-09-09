@@ -52,6 +52,36 @@ body{
   background: #31572c;
   border: none;
 }
+.main-form .btn-reset{
+  position: absolute;
+  float: right;
+  top: 2px;
+  right: -60px;
+  width: 55px;
+  height: 48px;
+  background-color: #4f772d;
+  border-radius: 30px;
+}
+#loading{
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #4f772d;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
+}
+#loading.display{
+  visibility: visible;
+}
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+}
 #bookList{
   max-width: 600px;
 }

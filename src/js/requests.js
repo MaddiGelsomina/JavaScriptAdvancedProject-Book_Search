@@ -1,12 +1,15 @@
 import _get from 'lodash/get';
 import { createBookItem } from "./items";
+import { displayLoading, hideLoading } from './index';
 const axios = require('axios');
 
 export let bookTitle = "";
 
 export function getBooksBySubject(subject){
 let url = `https://openlibrary.org/search.json?q=${subject}`;
-    
+
+    displayLoading();
+
     fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -15,6 +18,7 @@ let url = `https://openlibrary.org/search.json?q=${subject}`;
        return response.json();
     })
     .then((jsonData) => {
+      hideLoading();
       for(let i = 0; i <= 10; i++) {
         let item = _get(jsonData, ['docs', [i]], '');
         if(item){
@@ -29,6 +33,9 @@ let url = `https://openlibrary.org/search.json?q=${subject}`;
 
     .catch(err=>{
         return console.error(err);
+    })
+    .finally(() =>{
+      hideLoading();
     })
 }
 
