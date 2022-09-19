@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&family=Playfair+Display&display=swap');
-body{
-    background-color: #90a955;
-    margin: auto;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&family=Playfair+Display&display=swap");
+body {
+  background-color: #90a955;
+  margin: auto;
 }
-.title{
-    text-align: center;
-    display: block;
-    color: #31572c;
-    font-size: 56px;
-    margin-top: 100px;
-    margin-bottom: 25px;
-    font-family: 'Libre Baskerville', serif;
+.title {
+  text-align: center;
+  display: block;
+  color: #31572c;
+  font-size: 56px;
+  margin-top: 100px;
+  margin-bottom: 25px;
+  font-family: "Libre Baskerville", serif;
 }
-.input{
+.input {
   border: 0;
   outline: none;
   color: #4f772d;
   font-style: italic;
 }
-.main-form{
+.main-form {
   width: 500px;
   margin: 30px auto;
 }
-.main-form .search-box{
+.main-form .search-box {
   position: relative;
   width: 500px;
   height: 50px;
 }
-.main-form .search-box .input{
+.main-form .search-box .input {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,22 +37,22 @@ body{
   border-radius: 30px;
   font-size: 20px;
 }
-.main-form .search-box .btn{
+.main-form .search-box .btn {
   position: absolute;
   top: -16px;
   right: -1px;
   width: 60px;
   height: 100%;
-  background:#4f772d;
+  background: #4f772d;
   cursor: pointer;
   border-radius: 30px;
   border: none;
 }
-.main-form .search-box .btn:hover{
+.main-form .search-box .btn:hover {
   background: #31572c;
   border: none;
 }
-.main-form .btn-reset{
+.main-form .btn-reset {
   position: absolute;
   float: right;
   top: 2px;
@@ -62,7 +62,7 @@ body{
   background-color: #4f772d;
   border-radius: 30px;
 }
-#loading{
+#loading {
   width: 2rem;
   height: 2rem;
   border: 5px solid #f3f3f3;
@@ -72,51 +72,52 @@ body{
   visibility: hidden;
   animation: spin 1s infinite linear;
 }
-#loading.display{
+#loading.display {
   visibility: visible;
 }
-@keyframes spin{
-  from{
+@keyframes spin {
+  from {
     transform: rotate(0deg);
-  }to{
+  }
+  to {
     transform: rotate(360deg);
   }
 }
-#bookList{
+#bookList {
   max-width: 600px;
 }
-.card{
+.card {
   border-radius: 5px;
 }
-.card-header{
+.card-header {
   font-style: italic;
 }
-  button{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: white;
-  }
-  .bi-arrow-down-circle{
-    position: absolute;
-    top: 1px;
-    right: 1px;
-  }
-  .bi-x-circle{
-    position: absolute;
-    top: 1px;
-    right: 1px;
-  }
-  .hide{
-    display: none;
-  }
-.card-header{
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: white;
+}
+.bi-arrow-down-circle {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+.bi-x-circle {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+.hide {
+  display: none;
+}
+.card-header {
   color: #31572c;
 }
-.card-text{
+.card-text {
   font-style: italic;
-  color:#31572c;
+  color: #31572c;
 }
